@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useKindeAuth } from '../lib/kinde';
 import { supabase, Order, Profile } from '../lib/supabase';
 import { ShoppingBag, Clock, CheckCircle, XCircle, TrendingUp, User } from 'lucide-react';
 import { formatCurrency, formatDate, getStatusColor } from '../lib/utils';
 import LoadingSpinner from '../components/LoadingSpinner';
 import toast from 'react-hot-toast';
+import { useKindeAuth } from '@kinde-oss/kinde-auth-react';
 
 interface OrderWithDetails extends Order {
   vendors: {

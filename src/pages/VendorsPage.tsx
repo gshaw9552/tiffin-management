@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, Filter, Star, MapPin } from 'lucide-react';
+import { Search, Star } from 'lucide-react';
 import { supabase, Vendor } from '../lib/supabase';
 import VendorCard from '../components/VendorCard';
 import { VendorCardSkeleton } from '../components/LoadingSkeleton';
@@ -43,7 +43,7 @@ export default function VendorsPage() {
   };
 
   const filterAndSortVendors = () => {
-    let filtered = vendors.filter(vendor => {
+    const filtered = vendors.filter(vendor => {
       const matchesSearch = vendor.business_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                            vendor.address.toLowerCase().includes(searchQuery.toLowerCase()) ||
                            vendor.description?.toLowerCase().includes(searchQuery.toLowerCase());

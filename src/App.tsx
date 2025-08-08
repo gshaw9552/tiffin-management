@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { KindeProvider } from './lib/kinde';
+import {KindeProvider} from "@kinde-oss/kinde-auth-react";
 import { Toaster } from 'react-hot-toast';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -12,7 +12,12 @@ import HowItWorksPage from './pages/HowItWorksPage';
 
 export default function App() {
   return (
-    <KindeProvider>
+    <KindeProvider
+      clientId="a21040b79ae14063b3abf0b2a8d170f4"
+      domain="https://tiffinflow.kinde.com"
+      redirectUri={window.location.origin}
+      logoutUri={window.location.origin}
+    >
       <Router>
         <div className="min-h-screen flex flex-col">
           <Navbar />
